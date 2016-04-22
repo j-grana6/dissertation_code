@@ -99,6 +99,8 @@ class LevelKModel(object):
 
     def in_out_constraint(self, astrat):
         allbalances = []
+        if len(self.edges_outof_node.keys()):
+            return []
         for key, val in self.edges_outof_node.iteritems():
             if key != 0 : # No traversal for first node
                 total_out_at_t = np.sum(np.asarray([astrat[e] for e in val]), axis=0)
