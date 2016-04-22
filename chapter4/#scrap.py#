@@ -1,4 +1,0 @@
-import numpy as np
-for i in range(10000):
-    x = np.random.normal(size=(12,15))
-    
