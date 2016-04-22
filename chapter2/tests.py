@@ -62,7 +62,7 @@ def test_montecarlo():
     total = len(data[1][data[2]=="B"])
     num_integral = integrate.quad(integrand, 0,10, epsabs=.01) + \
                np.exp(-2)*10**total*np.exp(-10)/float(factorial([total])[0])
-    np.testing.assert_allclose(np.log(num_integral[0]) + probfroma, dsres, atol=.1) #relative test
+    np.testing.assert_allclose(np.log(num_integral[0]) + probfroma, dsres, atol=0, rtol=.01) #relative test
 
 if __name__ == "__main__":
     test_w_and_without()
